@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.archimatetool.editor2;singleton:=true
+Automatic-Module-Name: com.archimatetool.editor2
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: com.archimatetool.model.presentation.ArchimateEditorPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.archimatetool.model.presentation
+Require-Bundle: org.eclipse.core.runtime,
+ com.archimatetool.model.edit;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.edit.ui;visibility:=reexport
+Bundle-ActivationPolicy: lazy

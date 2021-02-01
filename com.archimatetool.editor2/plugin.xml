@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ This program and the accompanying materials
+ are made available under the terms of the License
+ which accompanies this distribution in the file LICENSE.txt
+-->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.core.runtime.applications"
+         id="ArchimateEditorAdvisorApplication">
+      <!-- @generated archimate -->
+      <application>
+         <run class="com.archimatetool.model.presentation.ArchimateEditorAdvisor$Application"/>
+      </application>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives">
+      <!-- @generated archimate -->
+      <perspective
+            name="%_UI_Perspective_label"
+            class="com.archimatetool.model.presentation.ArchimateEditorAdvisor$Perspective"
+            id="com.archimatetool.model.presentation.ArchimateEditorAdvisorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <!-- @generated archimate -->
+      <command
+            name="%_UI_Menu_OpenURI_label"
+            description="%_UI_Menu_OpenURI_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="com.archimatetool.model.presentation.ArchimateEditorAdvisorOpenURICommand"/>
+      <command
+            name="%_UI_Menu_Open_label"
+            description="%_UI_Menu_Open_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="com.archimatetool.model.presentation.ArchimateEditorAdvisorOpenCommand"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <!-- @generated archimate -->
+      <key
+            commandId="com.archimatetool.model.presentation.ArchimateEditorAdvisorOpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="com.archimatetool.model.presentation.ArchimateEditorAdvisorOpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated archimate -->
+      <actionSet
+            label="%_UI_ArchimateEditorAdvisor_ActionSet_label"
+            visible="true"
+            id="ArchimateEditorAdvisorActionSet">
+         <action
+               label="%_UI_Menu_About_label"
+               class="com.archimatetool.model.presentation.ArchimateEditorAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="com.archimatetool.model.presentation.ArchimateEditorAdvisorAboutAction"/>
+         <action
+               label="%_UI_Menu_OpenURI_label"
+               definitionId="com.archimatetool.model.presentation.ArchimateEditorAdvisorOpenURICommand"
+               class="com.archimatetool.model.presentation.ArchimateEditorAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="com.archimatetool.model.presentation.ArchimateEditorAdvisorOpenURIAction"/>
+         <action
+               label="%_UI_Menu_Open_label"
+               definitionId="com.archimatetool.model.presentation.ArchimateEditorAdvisorOpenCommand"
+               class="com.archimatetool.model.presentation.ArchimateEditorAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="com.archimatetool.model.presentation.ArchimateEditorAdvisorOpenAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated archimate -->
+      <actionSet
+            label="%_UI_ArchimateModelWizard_ActionSet_label"
+            visible="true"
+            id="com.archimatetool.model.presentation.ArchimateActionBarContributorActionSet">
+         <action
+               label="%_UI_ArchimateModelWizard_label"
+               class="com.archimatetool.model.presentation.ArchimateActionBarContributor$NewAction"
+               menubarPath="file/new/additions"
+               id="com.archimatetool.model.presentation.ArchimateActionBarContributorNewAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated archimate -->
+      <editor
+            id="com.archimatetool.model.presentation.ArchimateEditorID"
+            name="%_UI_ArchimateEditor_label"
+            icon="icons/full/obj16/ArchimateModelFile.gif"
+            extensions="archimate"
+            class="com.archimatetool.model.presentation.ArchimateEditor"
+            contributorClass="com.archimatetool.model.presentation.ArchimateActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
